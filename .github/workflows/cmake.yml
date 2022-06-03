@@ -21,7 +21,7 @@ jobs:
       run : |
         git submodule update --init --recursive
         sudo apt install lcov
-
+ 
     - name: Build
       run: cmake -H. -B _build -DCOVERAGE=1  && cmake --build _build
 
