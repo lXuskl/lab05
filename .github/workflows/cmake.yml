@@ -26,9 +26,10 @@ jobs:
       run: cmake -H. -B _build -DCOVERAGE=1  && cmake --build _build
 
     - name: Test
-      working-directory: ${{github.workspace}}/_build
+  
 
       run: |
+        cd _build
         ./test
         lcov -c -t "test" -o lcov.info -d .
         lcov --remove lcov.info '/home/runner/work/lab05/lab05/third-party/gtest/' -o lcov.info
