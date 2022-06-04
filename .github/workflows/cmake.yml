@@ -30,8 +30,8 @@ jobs:
       run: |
         ./test
         lcov -c -t "tree" -o lcov.info -d .
-        lcov --remove lcov.info '/home/runner/work/lab05/lab05/third-party/gtest/' -o lcov.info
-        lcov --remove lcov.info '/usr/include/' -o lcov.info
+        lcov --remove lcov.info '/home/runner/work/lab05/lab05/third-party/gtest/*' -o lcov.info
+        lcov --remove lcov.info '/usr/include/*' -o lcov.info
 
     - name: coveralls
       uses: coverallsapp/github-action@master
